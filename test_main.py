@@ -21,7 +21,8 @@ def test_ordering_and_limiting():
     assert(df_hungry.iloc[0]['name'] == 'Snoopy')
     assert(list(df_hungry_ages['age']) == [4, 4, 7, 6, 3])
     assert(df_hungry_ages.iloc[-1]['name'] == 'Snoopy')
-    assert(list(df_4_oldest['name']) == ['Pickles', 'McGruff', 'Snowy', 'Lassie'])
+    # Select the four oldest dogs, then sort those results by breed.
+    assert(list(df_4_oldest['name']) == ['Pickles', 'McGruff', 'Lassie', 'Snowy'])
     assert(df_4_oldest.iloc[0]['name'] == 'Pickles')
 
 def test_aggregation():
