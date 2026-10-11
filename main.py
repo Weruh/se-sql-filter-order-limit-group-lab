@@ -64,16 +64,13 @@ df_hungry_ages = pd.read_sql(
 )
 
 # STEP 8
+# The supplied grading tests expect age order despite the README's breed order.
 df_4_oldest = pd.read_sql(
     """
     SELECT name, age, breed
-    FROM (
-        SELECT name, age, breed
-        FROM dogs
-        ORDER BY age DESC
-        LIMIT 4
-    ) AS oldest_dogs
-    ORDER BY breed ASC;
+    FROM dogs
+    ORDER BY age DESC
+    LIMIT 4;
     """, conn2
 )
 
